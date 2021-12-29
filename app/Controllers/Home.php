@@ -6,7 +6,7 @@ class Home extends BaseController
 {
     public function index()
     {
-        return redirect()->to('http://localhost:8080/login');
+        return view('welcome_message');
     }
     public function dashboard()
     {
