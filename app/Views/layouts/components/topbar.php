@@ -14,8 +14,13 @@
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+
+                <a class="dropdown-item" href="<?= base_url('profile') ?>">
+                    <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+                    Profil
+                </a>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                    <i class="fa fa-power-off" aria-hidden="true"></i>
                     Logout
                 </a>
             </div>

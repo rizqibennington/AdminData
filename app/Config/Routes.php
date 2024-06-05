@@ -18,7 +18,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  */
 $routes->setDefaultNamespace('App\Controllers');
 $routes->setDefaultController('Home');
-$routes->setDefaultMethod('index');
+$routes->setDefaultMethod('dashboard');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
 $routes->setAutoRoute(true);
@@ -37,6 +37,15 @@ $routes->group('', ['filter' => 'login'], function ($routes) {
     $routes->add('contacts', 'ContactsController::create');
     $routes->add('contacts/edit/(:segment)', 'ContactsController::edit/$1');
     $routes->get('contacts/delete/(:segment)', 'ContactsController::delete/$1');
+    $routes->get('obat', 'ObatController::index');
+    $routes->get('obat/download_file/(:any)', 'ObatController::download/$1');
+    $routes->add('obat/create', 'ObatController::create');
+    $routes->post('obat/edit/(:segment)', 'ObatController::edit/$1');
+    $routes->post('obat/verifikasi/(:segment)', 'ObatController::verifikasi/$1');
+    $routes->get('obat/delete/(:segment)', 'ObatController::delete/$1');
+    $routes->post('obat/tolak/(:segment)', 'ObatController::tolak/$1');
+    $routes->get('profile', 'ProfileController::index');
+    $routes->post('profile/edit', 'ProfileController::edit');
 });
 
 /*
